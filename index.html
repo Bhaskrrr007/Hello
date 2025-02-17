@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensei Mods Mines Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Sensei Mods Mines Prediction</h1>
+
+    <!-- Activation Key System -->
+    <div id="activation-screen">
+        <h2>Enter Activation Key</h2>
+        <input type="password" id="activation-key" placeholder="Enter Sensei V1 Key">
+        <button onclick="validateKey()">Unlock</button>
+        <p id="attempt-message"></p>
+    </div>
+
+    <!-- Game Interface (Hidden Until Activation) -->
+    <div id="game-container" style="display: none;">
+        <h2>Enter Game Details</h2>
+        <input type="number" id="mine-count" placeholder="Enter number of mines (1-24)" min="1" max="24">
+        <input type="text" id="server-seed" placeholder="Enter Hashed Server Seed">
+        <input type="text" id="client-seed" placeholder="Enter Client Seed">
+        <button onclick="startGame()">Next Bet</button>
+
+        <div id="buffering" style="display: none;">
+            <p>Predicting Mines...</p>
+        </div>
+
+        <div id="grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
