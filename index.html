@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake Mines Predictor</title>
+    <style>
+        body {
+            background-color: #2b2b2b;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 { color: #FFD700; }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .tile {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mine { background-color: red; }
+        .gem { background-color: green; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover { background-color: #e03d00; }
+    </style>
+</head>
+<body>
+    <h1>Stake Mines Predictor</h1>
+    <div id="grid"></div>
+    <button onclick="fetchMines()">🔄 Refresh</button>
+
+    <script>
+        function createGrid() {
+            const grid = document.getElementById("grid");
+            grid.innerHTML = "";
+            for (let i = 0; i < 25; i++) {
+                let tile = document.createElement("div");
+                tile.classList.add("tile");
+                tile.setAttribute("id", "tile-" + i);
+                grid.appendChild(tile);
+            }
+        }
+
+        async function fetchMines() {
+            const response = await fetch("https://your-backend-url.com/api/mines");
+            const data = await response.json();
+            data.mines.forEach(index => {
+                document.getElementById("tile-" + index).classList.add("mine");
+                document.getElementById("tile-" + index).innerHTML = "💣";
+            });
+            data.gems.forEach(index => {
+                document.getElementById("tile-" + index).classList.add("gem");
+                document.getElementById("tile-" + index).innerHTML = "💎";
+            });
+        }
+
+        createGrid();
+    </script>
+</body>
+</html>
