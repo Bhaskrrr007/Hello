@@ -1,0 +1,124 @@
+/* Global Styles */
+body {
+    background-color: #0a0a0a;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Activation Popup */
+#activation-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.popup-content input {
+    padding: 10px;
+    margin: 10px 0;
+    background: #333;
+    color: white;
+    border: none;
+    text-align: center;
+    width: 80%;
+}
+
+.popup-content button {
+    background: linear-gradient(45deg, #00ff00, #008000);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: linear-gradient(45deg, #008000, #00ff00);
+}
+
+/* Game UI */
+h1 {
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.settings {
+    margin: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    background: #222;
+    color: white;
+    border: none;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+    background: linear-gradient(45deg, #00ff00, #008000);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #008000, #00ff00);
+}
+
+/* Grid */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.mine {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+.gem {
+    color: green;
+    text-shadow: 0 0 10px green;
+}
+
+/* Buffering Effect */
+#buffering {
+    display: none;
+    font-size: 18px;
+    color: yellow;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
