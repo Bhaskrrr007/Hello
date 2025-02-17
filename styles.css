@@ -1,0 +1,74 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+h1 {
+    color: #FFD700;
+    text-shadow: 0 0 15px #FFD700;
+}
+#activation-screen {
+    margin-top: 100px;
+}
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #ff4500, #ff7300);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: linear-gradient(45deg, #e03d00, #ff4500);
+    transform: scale(1.05);
+}
+.settings {
+    margin: 20px;
+}
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+.tile {
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.tile img {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+}
+.mine {
+    background-color: red;
+}
+.gem {
+    background-color: green;
+}
+.buffering {
+    font-size: 20px;
+    color: yellow;
+    display: none;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
